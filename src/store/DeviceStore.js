@@ -5,10 +5,15 @@ export default class DeviceStore {
         this._types = [
             {id: 1, name: 'Микроволновки'},
             {id: 2, name: 'Телефоны'},
+            {id: 3, name: 'Телевизоры'},
+            {id: 4, name: 'Компьютеры'},
         ]
         this._brands = [
             {id: 1, name: 'Samsung'},
             {id: 2, name: 'Lg'},
+            {id: 3, name: 'Lenovo'},
+            {id: 4, name: 'Asus'},
+            {id: 5, name: 'Xiaomi'},
         ]
         this._devices = [
             {
@@ -47,6 +52,8 @@ export default class DeviceStore {
                 img: 'https://cdn21vek.by/img/galleries/7543/669/128gb256gb_xiaomi_01_62a1ba95807a7.jpeg'
             },
         ]
+        this._selectedType = {}
+        this._selectedBrand = {}
         makeAutoObservable(this)
     }
 
@@ -62,6 +69,14 @@ export default class DeviceStore {
         this._devices = devices
     }
 
+    setSelectedType(type) {
+        this._selectedType = type
+    }
+
+    setSelectedBrand(brand) {
+        this._selectedBrand = brand
+    }
+
     get types() {
         return this._types
     }
@@ -72,5 +87,13 @@ export default class DeviceStore {
 
     get devices() {
         return this._devices
+    }
+
+    get selectedType() {
+        return this._selectedType
+    }
+
+    get selectedBrand() {
+        return this._selectedBrand
     }
 }
