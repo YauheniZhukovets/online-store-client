@@ -3,8 +3,9 @@ import {authRoutes, publicRoutes} from "../routes";
 import {SHOP_ROUTE} from "../utils/consts";
 import {useContext} from "react";
 import {Context} from "../index";
+import {observer} from "mobx-react-lite";
 
-export const AppRouter = () => {
+export const AppRouter = observer(() => {
     const {user} = useContext(Context)
 
     return (
@@ -18,4 +19,4 @@ export const AppRouter = () => {
             <Route path="*" element={<Navigate to={SHOP_ROUTE} replace/>}/>
         </Routes>
     )
-}
+})
