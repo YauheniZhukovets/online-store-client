@@ -12,7 +12,7 @@ export const DeviceItem = ({device}) => {
         >
             <Card
                 style={{width: 150, cursor: 'pointer'}}>
-                <Image width={100} height={200} src={device.img}/>
+                <Image width={100} height={200} src={process.env.REACT_APP_API_URL + device.img}/>
                 <div className='d-flex justify-content-between align-items-center'>
                     <div className='text-black-50 '>{device.name.split(' ')[0]}</div>
                     <div className='d-flex align-items-center'>

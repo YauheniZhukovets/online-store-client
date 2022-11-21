@@ -10,7 +10,7 @@ export const NavBar = observer(() => {
     const navigate = useNavigate()
 
     const logoutHandler = () => {
-        navigate(LOGIN_ROUTE)
+        user.setUser({})
         user.setIsAuth(false)
     }
 
@@ -37,7 +37,7 @@ export const NavBar = observer(() => {
                     :
                     <Nav className="ml-auto" style={{color: 'white'}}>
                         <Button variant={"outline-light"}
-                                onClick={() => user.setIsAuth(true)}
+                                onClick={() => navigate(LOGIN_ROUTE)}
                         >
                             Авторизация
                         </Button>
